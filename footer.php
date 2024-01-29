@@ -1,3 +1,5 @@
+<?php
+?>
 </main>
 <footer>
     <p>
