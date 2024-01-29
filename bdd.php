@@ -14,4 +14,3 @@ function dataBasePDO()
         die('Erreur : ' . $e->getMessage());
     }
 }
-
