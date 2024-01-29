@@ -1,17 +1,21 @@
 <?php
-    global $oeuvres;
     require 'header.php';
-    require 'oeuvres.php';
+    require 'bdd.php';
+
+    $dataBase = dataBasePDO();
+    $oeuvres = $dataBase->query('SELECT * FROM oeuvre');
 ?>
+
 <div id="liste-oeuvres">
-    <?php foreach($oeuvres as $oeuvre): ?>
+    <?php foreach($oeuvres as $oeuvre) { ?>
         <article class="oeuvre">
-            <a href="oeuvre.php?id=<?= $oeuvre['id'] ?>">
-                <img src="<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['titre'] ?>">
-                <h2><?= $oeuvre['titre'] ?></h2>
-                <p class="description"><?= $oeuvre['artiste'] ?></p>
+            <a href="oeuvre.php?id=<?php echo $oeuvre['Id']; ?>.php">
+                <img src="./<?php echo $oeuvre['image']; ?>" alt="<?php echo $oeuvre['title']; ?>">
+                <h2><?php echo $oeuvre['title']; ?></h2>
+                <p class="description"><?php echo $oeuvre['artist']; ?></p>
             </a>
         </article>
-    <?php endforeach; ?>
+    <?php } ?>
 </div>
+
 <?php require 'footer.php'; ?>
