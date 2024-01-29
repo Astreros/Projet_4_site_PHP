@@ -11,7 +11,7 @@
     </div>
     <div class="champ-formulaire">
         <label for="image">Lien de l'image</label>
-        <input type="text" name="image" id="image">
+        <input type="url" name="image" id="image">
     </div>
     <div class="champ-formulaire">
         <label for="description">Description</label>

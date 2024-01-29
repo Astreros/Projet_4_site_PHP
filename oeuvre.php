@@ -11,7 +11,6 @@
     // Je récupère l'œuvre via son ID au travers de la fonction getOne($idOeuvre)
     $oeuvre = getOne($_GET['id']);
 
-
     function getOne($idOeuvre)
     {
         $query = dataBasePDO()->prepare('SELECT * FROM oeuvre WHERE oeuvre.Id = :idOeuvre');
